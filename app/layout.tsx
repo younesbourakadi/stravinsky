@@ -1,9 +1,7 @@
+import Button from './component/Button'
 import Navbar from './component/Navbar'
 import './globals.css'
 
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Stravinsky',
@@ -20,6 +18,9 @@ export default function RootLayout({
       <body className='bg-white'>
         <Navbar />
         {children}
+        <div className='flex items-center justify-center h-screen'>
+        <Button/>
+        </div>
       </body>
     </html>
   )
