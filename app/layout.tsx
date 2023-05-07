@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({children}: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className='bg-white'>
+      <body className='flex bg-white'>
         <Navbar />
         {children}
         <div className='flex items-center justify-center h-screen'>
