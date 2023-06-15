@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stravinsky</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="navbar__logo" href="/">
+      <img src="" alt="Stravinsky">
+    </a>
+    <ul class="navbar__menu">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/activities">Activités</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+  <main class="container">
+    <h1 class="heading">Stravinsky</h1>
+    <p class="subheading">Connectez-vous à Strava</p>
+    <a class="button" href="https://www.strava.com/oauth/authorize?client_id=CLIENT_ID&amp;redirect_uri=REDIRECT_URI&amp;response_type=code&amp;scope=activity:read,activity:read_all">Connectez-vous à Strava</a>
+  </main>
+</body>
+</html>
+
