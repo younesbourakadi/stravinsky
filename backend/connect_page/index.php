@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Stravinsky</title>
-  <link rel="stylesheet" type="text/css" href="../backend/static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/styles.css?<?=time()?>">
 </head>
 <body>
   <nav class="navbar">

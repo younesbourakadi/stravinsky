@@ -1,0 +1,26 @@
+.navbar {
+  background-color: #ffad93;
+  display: flex;
+}
+.navbar .navbar-brand h1 {
+  color: #fff;
+}
+.navbar .navbar-brand a {
+  text-decoration: none;
+}
+.navbar .navbar-nav {
+  list-style-type: none;
+}
+.navbar .nav-item a {
+  text-decoration: none;
+  color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: Arial, Helvetica;
+}
+
+/*# sourceMappingURL=styles.css.map */
