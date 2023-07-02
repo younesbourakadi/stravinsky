@@ -1,26 +1,101 @@
 .navbar {
-  background-color: #ffad93;
+  background-color: #d64b33;
+  color: #fff;
+  padding: 10px;
   display: flex;
-}
-.navbar .navbar-brand h1 {
-  color: #fff;
-}
-.navbar .navbar-brand a {
-  text-decoration: none;
-}
-.navbar .navbar-nav {
-  list-style-type: none;
-}
-.navbar .nav-item a {
-  text-decoration: none;
-  color: #fff;
+  align-items: center;
+  justify-content: space-between;
 }
 
+.navbar__logo {
+  font-size: 1.5rem;
+}
+
+.navbar__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__item {
+  margin-left: 10px;
+}
+
+.navbar__link {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
-  font-size: 16px;
-  font-family: Arial, Helvetica;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.jumbotron {
+  text-align: center;
+  margin-bottom: 0;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pbv_brand {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #d64b33;
+}
+
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: #d64b33;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #0e3e5b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 576px) {
+  .navbar__logo {
+    font-size: 1.2rem;
+  }
+  .navbar__link {
+    font-size: 1rem;
+  }
+  .jumbotron {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

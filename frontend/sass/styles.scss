@@ -1,9 +1,75 @@
 @import '_navbar.scss';
+@import "_variables";
 
+/* RESET */
 * {
-    margin: 0;
-    padding: 0;
-  font-size: 16px;
-    font-family: Arial, Helvetica;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.jumbotron {
+  text-align: center;
+  margin-bottom: 0;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pbv_brand {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: $base-color;
+}
+
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: $base-color;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $secondary-color;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 576px) {
+  .navbar__logo {
+    font-size: 1.2rem;
+  }
+
+  .navbar__link {
+    font-size: 1rem;
+  }
+
+  .jumbotron {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
 }
 

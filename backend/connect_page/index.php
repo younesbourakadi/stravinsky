@@ -1,20 +1,73 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Stravinsky</title>
-    <link rel="stylesheet" type="text/css" href="../../static/css/styles.css?<?=time()?>">
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <link rel="stylesheet" href="../../static/css/styles.css">
 </head>
+
 <body>
   <nav class="navbar">
-    <?php include 'navbar.php'; ?>
+    <a class="navbar__logo" href="/">Stravinsky</a>
+    <ul class="navbar__list">
+      <li class="navbar__item">
+        <a class="navbar__link navbar__link--active" href="/">Activités</a>
+      </li>
+      <li class="navbar__item">
+        <a class="navbar__link navbar__link--active" href="/support">Contact</a>
+      </li>
+    </ul>
   </nav>
-  <main class="container">
-    <?php include 'header.php'; ?>
-    <?php include 'content.php'; ?>
+  <main role="main">
+    <section class="jumbotron">
+      <div class="container">
+        <div class="right-section">
+          <h1 class="pbv_brand">Stravinsky</h1>
+          <p class="lead text-muted">
+            Connectez-vous à Strava pour afficher vos records personnels de course.
+          </p>
+          <p class="lead text-muted">
+            Vous pouvez trier et filtrer les distances de 100m à 50km.
+          </p>
+          <button onclick="connectToStrava()" class="button">Connectez-vous à Strava</button>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="footer">
-    <?php include 'footer.php'; ?>
+  <footer class="container pt-3">
+    <div class="mt-3" style="text-align: center">
+      <div class="mx-auto fb-like" data-href="https://www.facebook.com/StravaExtensions/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true"></div>
+    </div>
+    <p class="text-muted pt-3" style="text-align: center">© Stravinsky 2023</p>
   </footer>
+
+  <script>
+    function connectToStrava() {
+      const clientId = "104900";
+      const redirectUri = encodeURIComponent("http://localhost/stravinsky/backend/activities/");
+      const responseType = "code";
+      const scope = "activity:read_all";
+
+      const url = `https://www.strava.com/api/v3/oauth/authorize?response_type=${responseType}&client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}`;
+
+      fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Error:', response.status);
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+  </script>
 </body>
+
 </html>
 
