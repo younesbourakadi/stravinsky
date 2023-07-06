@@ -31,7 +31,7 @@
           <p class="lead text-muted">
             Vous pouvez trier et filtrer les distances de 100m à 50km.
           </p>
-          <button onclick="connectToStrava()" class="button">Connectez-vous à Strava</button>
+          <button onclick="redirectToStrava()" class="button">Connectez-vous à Strava</button>
         </div>
       </div>
     </section>
@@ -43,30 +43,9 @@
     <p class="text-muted pt-3" style="text-align: center">© Stravinsky 2023</p>
   </footer>
 
-  <script>
-    function connectToStrava() {
-      const clientId = "104900";
-      const redirectUri = encodeURIComponent("http://localhost/stravinsky/backend/activities/");
-      const responseType = "code";
-      const scope = "activity:read_all";
-
-      const url = `https://www.strava.com/api/v3/oauth/authorize?response_type=${responseType}&client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}`;
-
-      fetch(url)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Error:', response.status);
-          }
-          return response.json();
-        })
-        .then(data => {
-          console.log(data);
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-    }
+  <script src="../../frontend/js/script.js">
   </script>
+    
 </body>
 
 </html>
