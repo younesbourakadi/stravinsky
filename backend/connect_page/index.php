@@ -1,3 +1,6 @@
+<?php
+//phpinfo();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -37,16 +40,13 @@
     </section>
   </main>
   <footer class="container pt-3">
-    <div class="mt-3" style="text-align: center">
-      <div class="mx-auto fb-like" data-href="https://www.facebook.com/StravaExtensions/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true"></div>
-    </div>
     <p class="text-muted pt-3" style="text-align: center">© Stravinsky 2023</p>
   </footer>
 
   <script src="../../frontend/js/script.js">
-  </script>
-    
+
+</script>
+
 </body>
 
 </html>
-
