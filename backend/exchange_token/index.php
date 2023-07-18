@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if (isset($_GET['code'])) {
     $authorizationCode = $_GET['code'];
     
@@ -20,14 +22,11 @@ if (isset($_GET['code'])) {
     $accessTokenResponse = curl_exec($ch);
     curl_close($ch);
 
-    // Redirigez l'utilisateur vers get_activities/index.php avec les tokens d'accès en tant que paramètres de requête
-    $redirectURL = '/stravinsky/backend/get_activities/index.php';
-    $redirectURL .= '?accessTokenResponse=' . urlencode($accessTokenResponse);
+    $_SESSION['accessTokenResponse'] = $accessTokenResponse;
 
-    header('Location: ' . $redirectURL);
+    header('Location: /stravinsky/backend/dashboard/index.php');
     exit;
 } else {
-    // Redirigez l'utilisateur vers une autre page s'il n'y a pas de code d'autorisation
     header('Location: /stravinsky/backend/connect_strava/connect_strava.php');
     exit;
 }

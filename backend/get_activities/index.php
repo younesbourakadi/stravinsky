@@ -1,9 +1,9 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
+session_start();
 
-$accessTokenResponse = isset($_GET['accessTokenResponse']) ? $_GET['accessTokenResponse'] : '';
-if (empty($accessTokenResponse)) {
+if (isset($_SESSION['accessTokenResponse'])) {
+    $accessTokenResponse = $_SESSION['accessTokenResponse'];
+} else {
     header('Location: /stravinsky/backend/connect_strava/connect_strava.php');
     exit;
 }
@@ -21,7 +21,9 @@ curl_close($ch);
 
 $activitiesData = json_decode($activitiesResponse, true);
 
-
+header('Content-Type: application/json');
 echo json_encode($activitiesData);
+
+exit;
 ?>
 
