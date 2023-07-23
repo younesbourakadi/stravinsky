@@ -1,13 +1,13 @@
-// connect_strava.php
 <?php
 $clientID = '104900';
 $clientSecret = '1138cc3440dbfccf0356dd798935bd7daad531f5';
-$redirectURI = 'http://localhost/stravinsky/backend/exchange_token&approval_prompt=force&scope=read';
+$redirectURI = 'http://localhost/stravinsky/backend/exchange_token';
+
 $authorizationParams = [
   'client_id' => $clientID,
   'redirect_uri' => $redirectURI,
   'response_type' => 'code',
-  'scope' => 'activity:read',
+  'scope' => 'activity:read_all',
 ];
 
 if (isset($_GET['code'])) {
@@ -20,7 +20,7 @@ if (isset($_GET['code'])) {
     'grant_type' => 'authorization_code',
   ];
 
-  $accessTokenURL = 'https://www.strava.com/oauth/authorize?';
+  $accessTokenURL = 'https://www.strava.com/oauth/token';
 
   $ch = curl_init($accessTokenURL);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -31,8 +31,8 @@ if (isset($_GET['code'])) {
   $accessTokenData = json_decode($accessTokenResponse, true);
   $accessToken = $accessTokenData['access_token'];
 
-  $activitiesURL = 'http://localhost/stravinsky/get_activities/';
-  $redirectURL = $activitiesURL . '?access_token=' . urlencode($accessToken);
+  $activitiesURL = 'http://localhost/stravinsky/backend/get_activities/index.php';
+  $redirectURL = $activitiesURL . '?accessTokenResponse=' . urlencode($accessTokenResponse);
   header('Location: ' . $redirectURL);
   exit;
 } else {
@@ -41,3 +41,4 @@ if (isset($_GET['code'])) {
   exit;
 }
 ?>
+

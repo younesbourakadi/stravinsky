@@ -43,7 +43,7 @@
     <p class="text-muted pt-3" style="text-align: center">© Stravinsky 2023</p>
   </footer>
 
-  <script src="../../frontend/js/script.js">
+  <script src="../../frontend/js/oauthRedirect.js">
 
 </script>
 
